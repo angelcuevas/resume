@@ -1,3 +1,10 @@
-body,html,#root, .App {
-    min-height: 100%;
-}
+html, body, #app, #app>div, .App, .App>div, #root, #root>div {
+    height: 99%;
+    margin:0px;
+  }
+
+  .App{
+      background: transparent;
+      height:100%;
+  }
+

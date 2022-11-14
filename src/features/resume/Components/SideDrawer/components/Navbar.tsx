@@ -3,10 +3,15 @@ import {Home, WorkHistory} from '@mui/icons-material';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { ILanguageText } from '../../../../../languages/ILanguage';
 
 const Navbar = () => {
+
+    const {navBar :text} = useSelector((state:any)=>state.languages.text as ILanguageText)
+
     return (<>
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        <List sx={{ width: '95%', maxWidth: 360 }}>
             <ListItem>
                 <ListItemButton>
                     <ListItemAvatar>
@@ -14,7 +19,7 @@ const Navbar = () => {
                             <Home />
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary={'Home'} />
+                    <ListItemText primary={text.homeLabel} />
                 </ListItemButton>
             </ListItem>
             <ListItem>
@@ -24,7 +29,7 @@ const Navbar = () => {
                             <WorkIcon />
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Portfolio"/>
+                    <ListItemText primary={text.portfolioLabel}/>
                 </ListItemButton>
             </ListItem>
             <ListItem>
@@ -34,7 +39,7 @@ const Navbar = () => {
                             <WorkHistory />
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Experiencia" />
+                    <ListItemText primary={text.ExpirienceLabel} />
                 </ListItemButton>
             </ListItem>
         </List>

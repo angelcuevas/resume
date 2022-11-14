@@ -1,25 +1,28 @@
 import React from 'react'
 import { Container, Grid, Button } from '@mui/material';
 import SideDrawer from './Components/SideDrawer/SideDrawer';
+import TopOptions from './Components/layout/TopOptions';
 
 const Resume = () => {
     return (
-        <div style={{display:'flex'}}>
-        <Grid container spacing={2} style={gridStyle}>
-            <Grid item xs={2}>
+
+        <Grid container spacing={2} style={gridStyle} >
+            <Grid item xs={2} style={gridStyle.sideBar}>
                 <SideDrawer />
             </Grid>
             <Grid item xs={10}>
-                El resto
+                <TopOptions />
             </Grid>
         </Grid>
-        </div>
+
     )
 }
 
 const gridStyle = {
-    background: 'transparent',
-    minHeight: '100%'
+    height: '100%',
+    sideBar: {
+        background: '#eeefee'
+    }
 }
 
 export default Resume
